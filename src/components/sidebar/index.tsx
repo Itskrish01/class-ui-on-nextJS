@@ -64,7 +64,6 @@ export const Sidebar = () => {
                                             setIsVideo(false)
                                         }
                                     }} style={{ backgroundColor: "#555555" }}>
-
                                         <FiLink2 />
                                         <h4 className='text-md font-semibold p-0 m-0'>{item.fileName}</h4>
                                     </div>
