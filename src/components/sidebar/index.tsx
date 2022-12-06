@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLink2 } from "react-icons/fi"
 import { useStateContext } from 'src/AppContext';
-import { Input } from '..';
+
 import ReactMarkdown from 'react-markdown'
 
 
@@ -20,7 +20,8 @@ export const Sidebar = () => {
         selectedRow,
         onAddImage,
         setIsImage,
-        setIsLink
+        setIsLink,
+        onLinkAdd
     } = useStateContext();
 
 
@@ -33,7 +34,6 @@ export const Sidebar = () => {
             <div className='sidebar_content'>
                 <h2 className='text-2xl font-bold text-center p-4'>Chapters & Resources</h2>
                 <div className='chapters flex flex-col gap-4 p-4'>
-                    <Input />
                     {data.map((item: any, idx: any) => {
                         return (
                             <div className='a_chapter py-4 px-6 rounded-2xl cursor-pointer' onClick={() => {
@@ -66,11 +66,17 @@ export const Sidebar = () => {
                                             setIsImage(false)
                                             setIsLink(false)
                                         }
-                                        else {
+                                        else if (item.fileName === "Image") {
                                             onAddImage(item.ImageFile)
                                             setIsImage(true)
                                             setIsVideo(false)
                                             setIsLink(false)
+                                        }
+                                        else {
+                                            onLinkAdd(item.link)
+                                            setIsLink(true)
+                                            setIsImage(false)
+                                            setIsVideo(false)
                                         }
                                     }} style={{ backgroundColor: "#555555" }}>
 

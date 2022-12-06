@@ -43,7 +43,7 @@ export const Pdf = () => {
             height={500}
             width={940}
           /> : isImage ?
-            <img src={image} alt="" /> : isLink ? <a className='text-white font-weight-bold text-2xl' href={link}>Link</a> :
+            <img src={image} alt="" /> : isLink ? <a className='text-white font-weight-bold text-2xl' target="_blank" href={link}>{link}</a> :
               < iframe src={data[selectedRow].file} width="840" height="580" allow="autoplay"></iframe>}
 
       </div>

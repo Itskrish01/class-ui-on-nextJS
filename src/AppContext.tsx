@@ -68,6 +68,13 @@ const data = [
         fileName: "Image",
         ImageFile: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
     },
+    {
+        id: "10",
+        name: "# **YouTube Link**",
+        topics: "A link to Youtube",
+        fileName: "Link",
+        link: "https://www.youtube.com"
+    },
 ]
 
 
@@ -130,10 +137,6 @@ export const StateContext = ({ children }: any) => {
         setLink(link);
     }
 
-    const submitHandler = () => {
-        setIsLink(true);
-    }
-
     return (
         <Context.Provider value={{
             PDF,
@@ -153,7 +156,6 @@ export const StateContext = ({ children }: any) => {
             onPrev,
             link,
             isLink,
-            submitHandler,
             onLinkAdd,
             setIsLink
         }}>{children}</Context.Provider>
