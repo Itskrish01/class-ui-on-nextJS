@@ -33,8 +33,10 @@ export const Pdf = () => {
         </div>
       </div>
       <div className='flex-auto flex flex-col justify-center items-center'>
+
         {isVideo ?
           <ReactPlayer
+            controls
             url={video}
             height={500}
             width={940}
