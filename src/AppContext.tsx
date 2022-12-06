@@ -154,7 +154,8 @@ export const StateContext = ({ children }: any) => {
             link,
             isLink,
             submitHandler,
-            onLinkAdd
+            onLinkAdd,
+            setIsLink
         }}>{children}</Context.Provider>
     );
 };

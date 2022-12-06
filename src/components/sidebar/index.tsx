@@ -19,7 +19,8 @@ export const Sidebar = () => {
         onSelectedRow,
         selectedRow,
         onAddImage,
-        setIsImage
+        setIsImage,
+        setIsLink
     } = useStateContext();
 
 
@@ -57,16 +58,19 @@ export const Sidebar = () => {
                                             onVideoAdd(item.videoFile)
                                             setIsVideo(true)
                                             setIsImage(false)
+                                            setIsLink(false)
                                         }
                                         else if (item.fileName === "PDF file") {
                                             onAddPDF(item.file)
                                             setIsVideo(false)
                                             setIsImage(false)
+                                            setIsLink(false)
                                         }
                                         else {
                                             onAddImage(item.ImageFile)
                                             setIsImage(true)
                                             setIsVideo(false)
+                                            setIsLink(false)
                                         }
                                     }} style={{ backgroundColor: "#555555" }}>
 
