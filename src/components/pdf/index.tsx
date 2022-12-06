@@ -14,7 +14,9 @@ export const Pdf = () => {
     onNext,
     onPrev,
     isImage,
-    image
+    image,
+    isLink,
+    link
   } = useStateContext();
 
   return (
@@ -41,10 +43,10 @@ export const Pdf = () => {
             height={500}
             width={940}
           /> : isImage ?
-            <img src={image} alt="" /> :
-            <iframe src={data[selectedRow].file} width="840" height="580" allow="autoplay"></iframe>}
+            <img src={image} alt="" /> : isLink ? <a className='text-white font-weight-bold text-2xl' href={link}>Link</a> :
+              < iframe src={data[selectedRow].file} width="840" height="580" allow="autoplay"></iframe>}
 
       </div>
-    </div>
+    </div >
   )
 }

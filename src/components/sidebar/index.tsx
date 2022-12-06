@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLink2 } from "react-icons/fi"
 import { useStateContext } from 'src/AppContext';
+import { Input } from '..';
+import ReactMarkdown from 'react-markdown'
+
 
 
 export const Sidebar = () => {
@@ -24,10 +27,12 @@ export const Sidebar = () => {
         <div className='text-white side_bar'>
             <div className='sidebar_header p-4 bg-[#333333]'>
                 <h2 className='text-2xl font-bold text-center '>Chapters & Resources</h2>
+
             </div>
             <div className='sidebar_content'>
                 <h2 className='text-2xl font-bold text-center p-4'>Chapters & Resources</h2>
                 <div className='chapters flex flex-col gap-4 p-4'>
+                    <Input />
                     {data.map((item: any, idx: any) => {
                         return (
                             <div className='a_chapter py-4 px-6 rounded-2xl cursor-pointer' onClick={() => {
@@ -37,7 +42,7 @@ export const Sidebar = () => {
                             }}>
                                 <div className='flex items-center' >
                                     <div className='flex-auto'>
-                                        <h4 className='text-xl font-semibold'>{item.name}</h4>
+                                        <ReactMarkdown>{item.name}</ReactMarkdown>
                                         <p>{item.topics}</p>
                                     </div>
                                     <div>
